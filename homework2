@@ -1,0 +1,8 @@
+
+
+#q5
+
+select round(sum(gr.total_amount)) ,zo."Borough"
+from green_taxi_data as gr , taxi_zone_lookup as zo
+where extract('day' from gr.lpep_pickup_datetime) =18
+group by extract('day' from gr.lpep_pickup_datetime) , zo."Borough"
